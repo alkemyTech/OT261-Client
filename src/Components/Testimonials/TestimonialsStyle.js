@@ -16,6 +16,15 @@ export const FromWrapper = styled.div`
   background: white;
   border: 1px solid #edf2f7;
   border-radius: 20px;
+  @media screen and (max-width: 980px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 560px) {
+    width: 90%;
+  }
 `;
 export const TitleContainer = styled.div`
   width: 100%;
@@ -27,6 +36,9 @@ export const TitleContainer = styled.div`
 export const Title = styled.h3`
   font-weight: 300;
   font-size: 2rem;
+  @media screen and (max-width: 560px) {
+    font-size: 1.5rem;
+  }
 `;
 export const Form = styled.form`
   display: flex;
