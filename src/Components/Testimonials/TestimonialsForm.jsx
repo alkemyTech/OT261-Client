@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-// import "../FormStyles.css";
+import { useDispatch } from "react-redux";
 import {
   Container,
   FromWrapper,
@@ -15,19 +15,20 @@ import {
   Title,
   Input,
 } from "./TestimonialsStyle.js";
+import { createTestimonial } from "../../store/slice/testimonials.js";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("name must be provided"),
   description: Yup.string().max(300).required("description must be provided"),
 });
 
-const onSubmit = (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  actions.resetForm();
-};
-
 const TestimonialForm = () => {
+  const dispatch = useDispatch();
+
+  const onSubmit = (values, actions) => {
+    dispatch(createTestimonial(values));
+    actions.resetForm();
+  };
   const {
     values,
     errors,
@@ -48,7 +49,7 @@ const TestimonialForm = () => {
   const inputHandler = (event, editor) => {
     setFieldValue("description", editor.getData());
   };
-  console.log(errors);
+
   return (
     <Container>
       <FromWrapper>
@@ -56,7 +57,7 @@ const TestimonialForm = () => {
           <TitleContainer>
             <Title>Create a Testimonial</Title>
           </TitleContainer>
-          {isSubmitting ? <p id="success-message"></p> : null}
+
           <FromGroup>
             <Label htmlFor="name">Name</Label>
             <Input
@@ -88,7 +89,11 @@ const TestimonialForm = () => {
             )}
           </FromGroup>
 
-          <Button className="submit-btn" type="submit">
+          <Button
+            className="submit-btn"
+            type="submit"
+            // onClick={dispatch(createT)}
+          >
             Send Testimonial
           </Button>
         </Form>
