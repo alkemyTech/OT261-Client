@@ -7,7 +7,6 @@ const url = process.env.REACT_APP_URL;
 export const instance = axios.create({
   baseURL: url,
   timeout: 1000,
- 
 });
 
 instance.interceptors.request.use(
