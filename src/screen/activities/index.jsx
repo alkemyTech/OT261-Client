@@ -30,7 +30,7 @@ const Activities = () => {
                     <Card.Body>
                       <Card.Title>{title}</Card.Title>
                       <StyledDescription>{description}</StyledDescription>
-                      <LinkContainer to={`activities/${id}`}>
+                      <LinkContainer to={`${id}`}>
                         <Card.Link href='#'>Ver más</Card.Link>
                       </LinkContainer>
                     </Card.Body>
