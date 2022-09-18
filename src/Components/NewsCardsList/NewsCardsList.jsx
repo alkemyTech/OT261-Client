@@ -1,11 +1,11 @@
 import NewsCardsListStyle from './styles';
 import NewsCard from '../NewsCard/NewsCard';
 
-const NewsCardsList = ({ testimonials }) => {
+const NewsCardsList = ({ news, className }) => {
   return (
-    <NewsCardsListStyle>
-      {testimonials.map(({ id, image }) => {
-        return <NewsCard key={id} img={image} text="news placeholder" />;
+    <NewsCardsListStyle className={className}>
+      {news.map(({ id, image }) => {
+        return <NewsCard key={id} id={id} img={image} text="news placeholder" />;
       })}
     </NewsCardsListStyle>
   );

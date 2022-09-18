@@ -46,7 +46,7 @@ return (
         <h4>Últimas novedades</h4>
         <Link to="/news">Ver todas {'>'}</Link>
       </div>
-      <NewsCardsList testimonials={icons.news_imgs} />
+      <NewsCardsList news={icons.news_imgs.slice(0,2)} />
     </div>
   </HomeStyles>
 );
