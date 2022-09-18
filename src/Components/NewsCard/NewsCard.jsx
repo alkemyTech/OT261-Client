@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import NewsCardStyle from "./styles";
 
-const NewsCard = ({ img, text }) => {
+const NewsCard = ({ img, text, id }) => {
   return (
     <NewsCardStyle>
       <div className="news-card-left">
@@ -9,7 +9,7 @@ const NewsCard = ({ img, text }) => {
       </div>
       <div className="news-card-right">
         <p>{text}</p>
-        <Link to="news/id" >Ver novedad</Link>
+        <Link to={`/news/${id}`} className="text-center fw-semibold">Ver novedad</Link>
       </div>
     </NewsCardStyle>
   );
