@@ -63,7 +63,13 @@ const icons = {
   news_imgs: [
     { image: news_1, id: 1 },
     { image: news_2, id: 2 },
-  ]
+    { image: news_1, id: 3 },
+    { image: news_2, id: 4 },
+    { image: news_1, id: 5 },
+    { image: news_2, id: 6 },
+    { image: news_1, id: 7 },
+    { image: news_2, id: 8 },
+  ],
 };
 
 export { icons }
