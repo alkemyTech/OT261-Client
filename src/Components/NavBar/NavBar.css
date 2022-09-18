@@ -9,12 +9,12 @@
 }
 
 .btn-rojo {
-  background-color: #a80707 !important;
-  border-color: #a80707 !important;
+  background-color: #a80707;
+  border-color: #a80707;
   margin-inline: 10px;
   padding-inline: 23px;
 }
-.btn-register:hover {
+.btn-rojo:hover {
   background-color: #920606;
   border-color: #920606;
 }
