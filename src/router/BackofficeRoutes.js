@@ -5,7 +5,7 @@ import { RequireAuth } from './RequireAuth';
 import { RequireAdminRole } from './RequireAdminRole';
 import { BackofficeActivities } from '../screen/backoffice-activities';
 import { BackofficeTestimonials } from '../screen/backoffice-testimonials/index,';
-
+import { BackofficeNews } from '../screen/backoffice-novedades';
 export const BackofficeRoutes = () => {
   return (
     <Routes>
@@ -33,9 +33,14 @@ export const BackofficeRoutes = () => {
           </RequireAdminRole>
         }
       />
+          <Route
+        path='news'
+        element={
+          <RequireAdminRole>
+            <BackofficeNews/>
+          </RequireAdminRole>
+        }
+      />
     </Routes>
-    
-    
-    
-  );
+     );
 };
