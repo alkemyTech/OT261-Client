@@ -34,6 +34,7 @@ const Login = () => {
     validationSchema,
     onSubmit: values => {
       dispatch(loginAsync(values))
+      formik.setSubmitting(false)
     }
   })
 
